@@ -1,0 +1,56 @@
+:host {
+  display: block;
+}
+.start-chat-box-button{
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  transform: scale(1);
+  border-radius: 50%;
+  height: 90px;
+  width: 90px;
+  border: 4px solid #fff;
+  background-color: $secondary-color;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+.start-chat-box-button:hover{
+  transform: scale(1.2);
+}
+ion-icon{
+  color: #fff;
+  font-size: 2rem;
+}
+.tooltip .tooltiptext {
+  font-family: "Poppins";
+  visibility: hidden;
+    position: absolute;
+    width: 120px;
+    background-color: $primary-color;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+    bottom: auto;
+    right: 128%;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent $primary-color;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}

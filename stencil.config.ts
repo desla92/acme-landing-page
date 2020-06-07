@@ -3,6 +3,7 @@ import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'acme-landing-page',
+  globalStyle: "src/global/global.scss",
   taskQueue: 'async',
   outputTargets: [
     {
@@ -18,6 +19,10 @@ export const config: Config = {
     }
   ],
   plugins: [
-    sass()
+    sass(
+      {
+        injectGlobalPaths: ["src/global/variables.scss"]
+      }
+    )
   ]
 };

@@ -1,0 +1,41 @@
+:host {
+  display: block;
+}
+ion-icon {
+  font-size: 1.4rem;
+  padding-right: 5px;
+  padding-top: 10px;
+}
+.subnav-container{
+  /* min-height: 60px; */
+  background-color: #ffffff;
+  border-bottom: 1px solid rgba(151,151,151,.2); 
+  font-size: 0.9rem;
+}
+.subnav{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.left-side-subnav{
+  display: flex;
+  align-items: flex-end;
+  letter-spacing: 1px;
+}
+li{
+  text-decoration: none;
+  list-style: none;
+}
+ul>li>a{
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $primary-color;
+  padding: 10px 15px;
+  transition: all .45s cubic-bezier(.25,.46,.45,.94);
+}
+ul>li>a:hover{
+  background-color: transparent;
+  color: $secondary-color;
+}
