@@ -1,0 +1,141 @@
+:host {
+  display: block;
+}
+.section-container{
+  width: 96%;
+  margin: 0 auto;
+  background: -webkit-linear-gradient(45deg, $primary-color, $secondary-color);
+  padding: 80px 0;
+}
+.grid-container{
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin: 0 auto;
+}
+.card-deck{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card{
+  margin: -10px;
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  color: $primary-color;
+  padding: 20px;
+  background-color: #ffffff;
+  
+}
+
+.freccia-agenzia, .freccia-clinica{
+  position: absolute;
+  top: 40px;
+  font-size: .7rem;
+  text-transform: uppercase;
+}
+
+.freccia-carrozzeria{
+  position: absolute;
+  top: 60px;
+  font-size: .7rem;
+  text-transform: uppercase;
+}
+
+.agenzia{
+  cursor: pointer;
+  width: 32%;
+  height: 240px;
+  border-radius: 0.25rem;
+ transition: all .8s cubic-bezier(.17,.67,.97,.96);
+}
+
+.agenzia:hover{
+  transform: scale(1.3);
+  z-index: 3;
+}
+
+.carrozzeria{
+  cursor: pointer;
+  width: 36%;
+  height: 280px;
+  border-radius: 0.25rem;
+  transition: all .8s cubic-bezier(.17,.67,.97,.96);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.carrozzeria:hover{
+  transform: scale(1.2);
+  z-index: 3;
+}
+
+.clinica{
+  cursor: pointer;
+  width: 32%;
+  height: 240px;
+  border-radius: 0.25rem;
+  transition: all .8s cubic-bezier(.17,.67,.97,.96);
+  z-index: 0;
+}
+
+.clinica:hover{
+  transform: scale(1.3);
+  z-index: 3;
+}
+
+.nome-agenzia, .nome-clinica{
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: absolute;
+  top: 160px;
+}
+
+.nome-carrozzeria{
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: absolute;
+  top: 180px;
+}
+ion-icon{
+  font-size: 3rem;
+}
+.question{
+  color: #ffffff;
+  padding-right: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+div.question>p{
+  text-transform: uppercase;
+}
+div.question>h2{
+  font-size: 2rem;
+}
+div.question>a{
+  background-color: $secondary-color;
+  border-radius: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  text-align: center;
+}
+div.question>a>ion-icon{
+  font-size: 1rem;
+  padding-left: 10px;
+}
+div.question>a:hover{
+  opacity: 0.8;
+  color: $primary-color;
+  text-decoration: none;
+  border-bottom: 0;
+}

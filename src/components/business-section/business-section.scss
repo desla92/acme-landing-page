@@ -1,0 +1,22 @@
+:host {
+  display: block;
+}
+.business{
+  width: 96%;
+  height: 500px;
+  margin: 0 auto;;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 8%;
+}
+.box-bianco{
+  background-color: #fff;
+  width: 40%;
+  height: 40%;
+  padding: 50px;
+  border-radius: 0.25rem;
+}

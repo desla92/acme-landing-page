@@ -38,11 +38,12 @@ ul>li>a{
   text-decoration: none;
   color: $primary-color;
   padding: 10px 15px;
-  transition: all .45s cubic-bezier(.25,.46,.45,.94);
+  transition: all .10s cubic-bezier(.25,.46,.45,.94); 
 }
 ul>li>a:hover{
   background-color: transparent;
   color: $secondary-color;
+  border-bottom: solid 5px $secondary-color;
 }
 ul.left-side-nav>a{ 
   padding-right: 30px;
@@ -61,77 +62,11 @@ ul.rigth-side-nav>li>a{
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 999;
 }
 ul.rigth-side-nav>li>a:hover{
   opacity: 0.8;
   color: $primary-color;
-}
-
-/* nav{
-  padding: 0 20px;
-  display: flex;
-  padding: 10px 20px;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
-  width: 98%;
-  height: 50px;
-  position: fixed;
-  top: 0;
-  z-index: 10;
-  background: #fff;
-  border-radius: 0;
-  animation: slide-in .2s cubic-bezier(.25,.46,.45,.94);
-  animation-fill-mode: forwards;
-}
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-li a, .dropbtn {
-  color: black;
-  padding: 14px 16px;
-  padding-left: 0;
   text-decoration: none;
+  border-bottom: 0;
 }
-li a:hover, .dropdown:hover .dropbtn {
-  color: $primary-color;
-}
-li.myAccount a{
-  padding: 0px;
-  color: white;
-}
-li.myAccount{
-  background-color: $primary-color;
-  padding: 5px 30px;
-}
-li.myAccount:hover{
-  opacity: 0.8;
-}
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: white;
-  min-width: 160px;
-  box-shadow: 0 16px 25px 0 rgba(0,0,0,.08);
-  z-index: 1;
-  padding: 10px;
-}
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-  border-bottom: 1px solid rgba(151,151,151,.2);
-}
-.dropdown:hover .dropdown-content{
-  display: block;
-}
-
- */

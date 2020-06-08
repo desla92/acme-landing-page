@@ -6,14 +6,15 @@ import { Component, ComponentInterface, h, Host } from '@stencil/core';
   shadow: true,
 })
 export class AcmeSections implements ComponentInterface {
-
+  
   render() {
     return (
       <Host>
         <banner-section></banner-section>
-        {/* <willsee-section></willsee-section>
+        <what-you-need-section></what-you-need-section>
+        <business-section></business-section>
         <cards-section></cards-section>
-        <news-section></news-section> */}
+        <news-section></news-section> 
       </Host>
     );
   }

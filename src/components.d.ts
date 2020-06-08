@@ -15,6 +15,10 @@ export namespace Components {
     interface AcmeHeader {
     }
     interface AcmeNavbar {
+        /**
+          * string that identifies the nav class
+         */
+        "navBarClass": string;
     }
     interface AcmeSections {
     }
@@ -23,6 +27,8 @@ export namespace Components {
     interface AcmeWebsite {
     }
     interface BannerSection {
+    }
+    interface BusinessSection {
     }
     interface DivServizio {
         /**
@@ -37,6 +43,8 @@ export namespace Components {
           * service's title
          */
         "label": string;
+    }
+    interface WhatYouNeedSection {
     }
 }
 declare global {
@@ -94,11 +102,23 @@ declare global {
         prototype: HTMLBannerSectionElement;
         new (): HTMLBannerSectionElement;
     };
+    interface HTMLBusinessSectionElement extends Components.BusinessSection, HTMLStencilElement {
+    }
+    var HTMLBusinessSectionElement: {
+        prototype: HTMLBusinessSectionElement;
+        new (): HTMLBusinessSectionElement;
+    };
     interface HTMLDivServizioElement extends Components.DivServizio, HTMLStencilElement {
     }
     var HTMLDivServizioElement: {
         prototype: HTMLDivServizioElement;
         new (): HTMLDivServizioElement;
+    };
+    interface HTMLWhatYouNeedSectionElement extends Components.WhatYouNeedSection, HTMLStencilElement {
+    }
+    var HTMLWhatYouNeedSectionElement: {
+        prototype: HTMLWhatYouNeedSectionElement;
+        new (): HTMLWhatYouNeedSectionElement;
     };
     interface HTMLElementTagNameMap {
         "acme-chat-button": HTMLAcmeChatButtonElement;
@@ -110,7 +130,9 @@ declare global {
         "acme-subnav": HTMLAcmeSubnavElement;
         "acme-website": HTMLAcmeWebsiteElement;
         "banner-section": HTMLBannerSectionElement;
+        "business-section": HTMLBusinessSectionElement;
         "div-servizio": HTMLDivServizioElement;
+        "what-you-need-section": HTMLWhatYouNeedSectionElement;
     }
 }
 declare namespace LocalJSX {
@@ -123,6 +145,10 @@ declare namespace LocalJSX {
     interface AcmeHeader {
     }
     interface AcmeNavbar {
+        /**
+          * string that identifies the nav class
+         */
+        "navBarClass"?: string;
     }
     interface AcmeSections {
     }
@@ -131,6 +157,8 @@ declare namespace LocalJSX {
     interface AcmeWebsite {
     }
     interface BannerSection {
+    }
+    interface BusinessSection {
     }
     interface DivServizio {
         /**
@@ -146,6 +174,8 @@ declare namespace LocalJSX {
          */
         "label"?: string;
     }
+    interface WhatYouNeedSection {
+    }
     interface IntrinsicElements {
         "acme-chat-button": AcmeChatButton;
         "acme-contact-form": AcmeContactForm;
@@ -156,7 +186,9 @@ declare namespace LocalJSX {
         "acme-subnav": AcmeSubnav;
         "acme-website": AcmeWebsite;
         "banner-section": BannerSection;
+        "business-section": BusinessSection;
         "div-servizio": DivServizio;
+        "what-you-need-section": WhatYouNeedSection;
     }
 }
 export { LocalJSX as JSX };
@@ -172,7 +204,9 @@ declare module "@stencil/core" {
             "acme-subnav": LocalJSX.AcmeSubnav & JSXBase.HTMLAttributes<HTMLAcmeSubnavElement>;
             "acme-website": LocalJSX.AcmeWebsite & JSXBase.HTMLAttributes<HTMLAcmeWebsiteElement>;
             "banner-section": LocalJSX.BannerSection & JSXBase.HTMLAttributes<HTMLBannerSectionElement>;
+            "business-section": LocalJSX.BusinessSection & JSXBase.HTMLAttributes<HTMLBusinessSectionElement>;
             "div-servizio": LocalJSX.DivServizio & JSXBase.HTMLAttributes<HTMLDivServizioElement>;
+            "what-you-need-section": LocalJSX.WhatYouNeedSection & JSXBase.HTMLAttributes<HTMLWhatYouNeedSectionElement>;
         }
     }
 }

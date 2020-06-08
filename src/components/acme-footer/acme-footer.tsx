@@ -8,6 +8,11 @@ import { Component, ComponentInterface, h, getAssetPath,} from '@stencil/core';
 })
 export class AcmeFooter implements ComponentInterface {
   
+  private handleScrollUpClick = () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  };
+
   render() {
     return (
       <footer>
@@ -45,12 +50,12 @@ export class AcmeFooter implements ComponentInterface {
               <a href=""><p>Sostenibilità</p></a>
             </div>
             <div class="flex-end">
-              <div><ion-icon class="button-up"name="chevron-up-outline"></ion-icon></div>
+              <div onClick={this.handleScrollUpClick}><ion-icon class="button-up"name="chevron-up-outline"></ion-icon></div>
             </div>
           </section>
           <section class="third-footer-section">
             <a href="#"><img src={getAssetPath("/assets/logoMod.png")} alt="logo" /></a>
-            <p class="disclaimer"><b>ACME Enterprise Spa</b> - P.I. 00000000000 <br/> L'Impresa opera attraverso il sito in qualità di distributore di prodotti assicurativi. <br/>© 2020 ACME Enterprise | Attenzione: il sito è stato creato a scopo didattico dagli allievi del corso accademico Web & Digital Media del primo anno della Scuola Mohole. Alcuni contenuti e riferimenti aziendali sono di fantasia.</p>
+            <p class="disclaimer"><b>© 2020 ACME Enterprise Spa</b> - P.I. 00000000000 <br/> L'Impresa opera attraverso il sito in qualità di distributore di prodotti assicurativi. <br/>ACME Enterprise | Attenzione: il sito è stato creato a scopo didattico dagli allievi del corso accademico Web & Digital Media del primo anno della Scuola Mohole. Alcuni contenuti e riferimenti aziendali sono di fantasia.</p>
           </section>
         </div>
       </footer>

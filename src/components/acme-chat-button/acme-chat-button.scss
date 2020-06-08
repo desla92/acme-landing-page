@@ -3,6 +3,7 @@
 }
 .start-chat-box-button{
   position: fixed;
+  z-index: 999;
   bottom: 40px;
   right: 40px;
   transform: scale(1);

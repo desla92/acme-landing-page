@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, h, getAssetPath, Listen} from '@stencil/core';
+import { Component, ComponentInterface, h, getAssetPath, Listen, Element, Prop} from '@stencil/core';
 
 @Component({
   tag: 'acme-navbar',
@@ -7,19 +7,27 @@ import { Component, ComponentInterface, h, getAssetPath, Listen} from '@stencil/
   assetsDirs: ["/assets"],
 })
 export class AcmeNavbar implements ComponentInterface {
+  /**
+   *  string that identifies the nav class 
+   */
+  @Prop() navBarClass: string = "nav-container";
 
+  @Element() el: HTMLAcmeNavbarElement;
 
   @Listen('scroll', { target: 'window' })
+  
   handleScroll(ev) {
-    console.log('the body was scrolled', ev);
-    console.log(ev.target.scrollingElement.scrollTop);
+    if (ev.target.scrollingElement.scrollTop > this.el.offsetTop) {
+      this.navBarClass = "nav-container sticky";
+    } else {
+      this.navBarClass = "nav-container";
+    }
   }
 
-  
 
   render() {
     return (
-      <nav class="nav-container">
+    <nav class={this.navBarClass}>
       <section class="nav">
           <ul class="left-side-nav">
             <a href="#"><img src={getAssetPath("/assets/logoMod.png")} alt="logo" /></a> 
