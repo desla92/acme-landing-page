@@ -15,8 +15,10 @@ export class BusinessSection implements ComponentInterface {
     return (
     <section style={this.bgStyle} class="business">
       <div class="box-bianco">
-        <p>Perchè siamo diversi</p>
-        <h2>Perché la tua impresa è la cosa più importante per te. Ma anche per noi di ACME.</h2>
+        <p class="titoletto">Perchè siamo adatti al tuo business</p>
+        <h2>Amiamo i tuoi sogni.</h2>
+        <p class="descrizione">La tua <b>impresa</b> è la cosa più <b>importante</b> per te. <br/> Ma anche per noi di ACME.</p>
+        <button>Scopri le nostre soluzioni<ion-icon name="arrow-forward-outline"></ion-icon></button>
       </div>
     </section>
     );

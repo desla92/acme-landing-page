@@ -19,7 +19,7 @@ export class BannerSection implements ComponentInterface {
         <br/> 
         <h1>Affidati e rilassati.
         <br/>
-        Pensiamo a tutto noi.</h1>
+        Ti assicuriamo noi.</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere cupiditate ut, velit veniam aliquid quis aliquam. Officiis provident molestias fugit?</p>
         <div class="servizi">
           <div-servizio iconName="car-sport-outline" label="Mobilità" ></div-servizio>

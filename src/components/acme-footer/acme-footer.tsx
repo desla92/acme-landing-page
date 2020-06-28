@@ -23,7 +23,6 @@ export class AcmeFooter implements ComponentInterface {
               <a href=""><ion-icon class="facebook" name="logo-facebook"></ion-icon></a>
               <a href=""><ion-icon class="linkedin" name="logo-linkedin"></ion-icon></a>
               <a href=""><ion-icon class="twitter" name="logo-twitter"></ion-icon></a>
-              <a href=""><ion-icon class="instagram" name="logo-instagram"></ion-icon></a>
               <a href=""><ion-icon class="youtube" name="logo-youtube"></ion-icon></a>
               </div>
             <div><hr/></div>

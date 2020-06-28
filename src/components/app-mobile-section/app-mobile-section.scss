@@ -1,0 +1,99 @@
+:host {
+  display: block;
+}
+*{
+  box-sizing: border-box;
+}
+.container{
+  width: 96%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+  padding: 50px 0px;
+  position: relative;
+}
+img{
+  width: 80%;
+}
+/* .cerchio{
+  position: absolute;
+  background-color: $primary-color;
+  width: 600px;
+  height: 300px;
+  z-index: -1;
+  border-radius: 50%;
+} */
+.dowload-app-mobile-left{
+  display: flex;
+  justify-content: flex-end;
+}
+.blue-up,.blue-down, .lblue-up, .lblue-down{
+  position: absolute;
+  height: 100px;
+  z-index: -1;
+}
+.blue-up{
+  background-color: $primary-color; 
+  top: 130px;
+  right: 0;
+  width: 80%;
+}
+.blue-down{
+  background-color: $primary-color; 
+  bottom: 150px;
+  left: 0;
+  width: 40%;
+}
+.lblue-up{
+  background-color: $secondary-color;
+  top: 250px;
+  right: 0;
+  width:80%;
+}
+.lblue-down{
+  background-color: $secondary-color; 
+  bottom: 270px;
+  left: 0;
+  width: 40%;
+}
+h2{
+  font-size: 2rem;
+  color: $primary-color;
+  position: absolute;
+  top: 50px;
+  right: 10vw;
+ /*  left: 50%;
+  transform: translate(-50%, -50%); */
+}
+.slide-in {
+  animation-duration: 2s;
+  animation-name: slidein;
+  animation-iteration-count: initial;
+  animation-delay: 5s;
+}
+
+@keyframes slidein {
+  from {
+    width: 0; 
+  }
+
+  to {
+    width: 80%;
+  }
+}
+.slide-in40 {
+  animation-duration: 2s;
+  animation-name: slidein40;
+  animation-iteration-count: initial;
+}
+
+@keyframes slidein40 {
+  from {
+    width: 0; 
+  }
+
+  to {
+    width: 40%;
+  }
+}

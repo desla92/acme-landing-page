@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, h } from '@stencil/core';
+import { Component, ComponentInterface, h, Element} from '@stencil/core';
 
 @Component({
   tag: 'acme-contact-form',
@@ -6,138 +6,130 @@ import { Component, ComponentInterface, h } from '@stencil/core';
   shadow: true,
 })
 export class AcmeContactForm implements ComponentInterface {
+  @Element() el: HTMLAcmeContactFormElement;
+  private fname;
+  private lname;
+  private greenChecks;
+  private errors;
+  private email;
+  private textarea;
+  private myForm;
+  componentDidLoad(){
+    this.fname = this.el.shadowRoot.querySelector('#fname') as any;
+    this.lname = this.el.shadowRoot.querySelector('#lname') as any;
+    this.email = this.el.shadowRoot.querySelector('#email') as any;
+    this.textarea = this.el.shadowRoot.querySelector('#subject') as any;
+    this.greenChecks = Array.from(this.el.shadowRoot.querySelectorAll('ion-icon')) as any;
+    this.errors = Array.from(this.el.shadowRoot.querySelectorAll('.error')) as any;
+    this.myForm = this.el.shadowRoot.querySelector('#my-form') as any;
+    this.myForm.addEventListener('keydown',(evt)=>{
+      if(evt.keyCode === 13){
+        evt.preventDefault();
+      }
+    })
+  }
 
+  private validateFname = (evt)=>{
+    if(this.fname.value === ""){
+      this.fname.style="border: solid 2px red;";
+      (this.greenChecks)[0].style.display="none";
+      (this.errors)[0].style.display="block";
+      return false;
+    } else{
+      this.fname.style="border: 1px solid #ccc";
+      (this.greenChecks)[0].style.display="block";
+      (this.errors)[0].style.display="none";
+      return true;
+    }
+  }
+  private validateLname = (evt)=>{
+    if(this.lname.value === ""){
+      this.lname.style="border: solid 2px red;";
+      (this.greenChecks)[1].style.display="none";
+      (this.errors)[1].style.display="block";
+      return false;
+    } else{
+      this.lname.style="border: 1px solid #ccc";
+      (this.greenChecks)[1].style.display="block";
+      (this.errors)[1].style.display="none";
+      return true;
+    }
+  }
+  private validateEmail=(evt)=>{  
+    const atposition=this.email.value.indexOf("@");  
+    const dotposition=this.email.value.lastIndexOf("."); 
+    if (atposition<1 || dotposition<atposition+2 || dotposition+2>=this.email.value.length){ 
+      console.log(this.email.value) 
+      this.email.style="border: solid 2px red;";
+      (this.greenChecks)[2].style.display="none";
+      (this.errors)[2].style.display="block";
+      return false
+  }  else{
+    this.email.style="border: 1px solid #ccc";
+    (this.greenChecks)[2].style.display="block";
+    (this.errors)[2].style.display="none";
+    return true;
+  }
+} 
+private checkTextArea = (evt)=>{
+  if(this.textarea.value === ""){
+    this.textarea.style="border: solid 2px red;";
+    (this.greenChecks)[3].style.display="none";
+    (this.errors)[3].style.display="block";
+    return false;
+  } else{
+    this.textarea.style="border: 1px solid #ccc";
+    (this.greenChecks)[3].style.display="block";
+    (this.errors)[3].style.display="none";
+    return true;
+  }
+}
+private submitForm=(evt)=>{
+  if(!this.validateFname(evt) && !this.validateLname(evt) && !this.validateEmail(evt) && !this.checkTextArea(evt)){
+    evt.preventDefault();
+  }
+}
   render() {
     return (
       <div class="container">
-        <div class="field is-horizontal">
-          <div class="field-label is-normal">
-            <label class="label">From</label>
-          </div>
-        <div class="field-body">
-          <div class="field">
-            <p class="control is-expanded has-icons-left">
-              <input class="input" type="text" placeholder="Name"/>
-                <span class="icon is-small is-left">
-                  <i class="fas fa-user"></i>
-                </span>
-            </p>
-          </div>
-        <div class="field">
-          <p class="control is-expanded has-icons-left has-icons-right">
-            <input class="input is-success" type="email" placeholder="Email" value="alex@smith.com"/>
-              <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-              </span>
-               <span class="icon is-small is-right">
-                <i class="fas fa-check"></i>
-              </span>
-          </p>
+        <h2>Contattaci</h2>
+        <p>Se hai qualche dubbio e vuoi chiederci qualcosa, compila il form sottostante <br/>  oppure chiama il numero verde 800 095 095 dal lunedì al venerdì dalle ore 08.30 alle ore 19.00</p>
+      <div class="formContainer">
+      
+      <form onSubmit={this.submitForm} id="my-form" action=""  method="">
+        <label htmlFor="fname">Nome</label>
+        <div class="row-form">
+          <input onBlur={this.validateFname} type="text" id="fname" name="firstname" placeholder="Il tuo nome"/>
+          <ion-icon name="checkmark-outline"></ion-icon>
         </div>
-      </div>
-</div>
-
-<div class="field is-horizontal">
-  <div class="field-label"></div>
-  <div class="field-body">
-    <div class="field is-expanded">
-      <div class="field has-addons">
-        <p class="control">
-          <a class="button is-static">
-            +44
-          </a>
-        </p>
-        <p class="control is-expanded">
-          <input class="input" type="tel" placeholder="Your phone number"/>
-        </p>
-      </div>
-      <p class="help">Do not enter the first zero</p>
-    </div>
-  </div>
-</div>
-
-<div class="field is-horizontal">
-  <div class="field-label is-normal">
-    <label class="label">Department</label>
-  </div>
-  <div class="field-body">
-    <div class="field is-narrow">
-      <div class="control">
-        <div class="select is-fullwidth">
-          <select>
-            <option>Business development</option>
-            <option>Marketing</option>
-            <option>Sales</option>
-          </select>
+        <p class="error">* Campo obbligatorio</p>
+        
+    
+        <label htmlFor="lname">Cognome</label>
+        <div class="row-form">
+        <input onBlur={this.validateLname} type="text" id="lname" name="lastname" placeholder="Il tuo cognome"/>
+        <ion-icon name="checkmark-outline"></ion-icon>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
+        <p class="error">* Campo obbligatorio</p>
+    
+        <label htmlFor="email">Email</label>
+        <div class="row-form">
+        <input onBlur={this.validateEmail} type="text" id="email" name="email" placeholder="La tua mail"/>
+        <ion-icon name="checkmark-outline"></ion-icon>
+        </div>
+        <p class="error">* Campo obbligatorio</p>
+    
+        <label htmlFor="subject">Richiesta</label>
+        <div class="row-form">
+        <textarea onBlur={this.checkTextArea} id="subject" name="subject" placeholder="Inserisci qui il tuo testo" ></textarea>
+        <ion-icon name="checkmark-outline"></ion-icon>
+        </div>
+        <p class="error">* Campo obbligatorio</p>
 
-<div class="field is-horizontal">
-  <div class="field-label">
-    <label class="label">Already a member?</label>
-  </div>
-  <div class="field-body">
-    <div class="field is-narrow">
-      <div class="control">
-        <label class="radio">
-          <input type="radio" name="member"/>
-          Yes
-        </label>
-        <label class="radio">
-          <input type="radio" name="member"/>
-          No
-        </label>
-      </div>
+        <input id="submit" type="submit" value="Invia richiesta"/>
+      </form>
     </div>
-  </div>
-</div>
-
-<div class="field is-horizontal">
-  <div class="field-label is-normal">
-    <label class="label">Subject</label>
-  </div>
-  <div class="field-body">
-    <div class="field">
-      <div class="control">
-        <input class="input is-danger" type="text" placeholder="e.g. Partnership opportunity"/>
-      </div>
-      <p class="help is-danger">
-        This field is required
-      </p>
     </div>
-  </div>
-</div>
-
-<div class="field is-horizontal">
-  <div class="field-label is-normal">
-    <label class="label">Question</label>
-  </div>
-  <div class="field-body">
-    <div class="field">
-      <div class="control">
-        <textarea class="textarea" placeholder="Explain how we can help you"></textarea>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="field is-horizontal">
-  <div class="field-label">
-  </div>
-  <div class="field-body">
-    <div class="field">
-      <div class="control">
-        <button class="button is-primary">
-          Send message
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
     );
   }
 

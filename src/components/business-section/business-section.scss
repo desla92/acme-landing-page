@@ -15,8 +15,41 @@
 }
 .box-bianco{
   background-color: #fff;
-  width: 40%;
+  width: 35%;
   height: 40%;
   padding: 50px;
   border-radius: 0.25rem;
+  color: $primary-color;
+}
+.titoletto{
+  text-transform: uppercase;
+  color: $secondary-color;
+  margin-bottom: 0px;
+}
+button{
+  background-color: $secondary-color;
+  border-radius: .25rem;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  text-align: center;
+  outline: 0;
+  border: 0;
+}
+button:hover{
+  opacity: 0.8;
+  color: $primary-color;
+  text-decoration: none;
+  border-bottom: 0;
+}
+ion-icon{
+  margin-left: 10px;
+}
+h2{
+  font-size: 2rem;
+  margin-top: 0px;
+}
+.descrizione{
+  color: #4a4a4a;
 }

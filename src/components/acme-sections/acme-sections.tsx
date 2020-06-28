@@ -11,10 +11,12 @@ export class AcmeSections implements ComponentInterface {
     return (
       <Host>
         <banner-section></banner-section>
-        <what-you-need-section></what-you-need-section>
+        <about-us-section></about-us-section>
         <business-section></business-section>
         <cards-section></cards-section>
+        <what-you-need-section></what-you-need-section> 
         <news-section></news-section> 
+        <app-mobile-section></app-mobile-section>
       </Host>
     );
   }

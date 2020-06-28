@@ -81,7 +81,8 @@ section.second-footer-section>div>a:hover{
   color: #ffffff;
   --ionicon-stroke-width: 16px;
   font-size: 2rem;
-  border-radius: 10px;
+  border-radius: .25rem;
+  cursor: pointer;
 }
 h3{
   color: $primary-color;

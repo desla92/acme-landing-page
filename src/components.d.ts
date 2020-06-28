@@ -26,9 +26,13 @@ export namespace Components {
     }
     interface AcmeWebsite {
     }
+    interface AppMobileSection {
+    }
     interface BannerSection {
     }
     interface BusinessSection {
+    }
+    interface CardsSection {
     }
     interface DivServizio {
         /**
@@ -43,6 +47,30 @@ export namespace Components {
           * service's title
          */
         "label": string;
+    }
+    interface NewsSection {
+    }
+    interface SingleCard {
+        /**
+          * card description
+         */
+        "descrizione": string;
+        /**
+          * image file name
+         */
+        "fileName": string;
+        /**
+          * what is written inside the clickable tag a at the bottom of the card
+         */
+        "scrittaBottone": string;
+        /**
+          * card subtitle
+         */
+        "titoletto": string;
+        /**
+          * card title
+         */
+        "titolo": string;
     }
     interface WhatYouNeedSection {
     }
@@ -96,6 +124,12 @@ declare global {
         prototype: HTMLAcmeWebsiteElement;
         new (): HTMLAcmeWebsiteElement;
     };
+    interface HTMLAppMobileSectionElement extends Components.AppMobileSection, HTMLStencilElement {
+    }
+    var HTMLAppMobileSectionElement: {
+        prototype: HTMLAppMobileSectionElement;
+        new (): HTMLAppMobileSectionElement;
+    };
     interface HTMLBannerSectionElement extends Components.BannerSection, HTMLStencilElement {
     }
     var HTMLBannerSectionElement: {
@@ -108,11 +142,29 @@ declare global {
         prototype: HTMLBusinessSectionElement;
         new (): HTMLBusinessSectionElement;
     };
+    interface HTMLCardsSectionElement extends Components.CardsSection, HTMLStencilElement {
+    }
+    var HTMLCardsSectionElement: {
+        prototype: HTMLCardsSectionElement;
+        new (): HTMLCardsSectionElement;
+    };
     interface HTMLDivServizioElement extends Components.DivServizio, HTMLStencilElement {
     }
     var HTMLDivServizioElement: {
         prototype: HTMLDivServizioElement;
         new (): HTMLDivServizioElement;
+    };
+    interface HTMLNewsSectionElement extends Components.NewsSection, HTMLStencilElement {
+    }
+    var HTMLNewsSectionElement: {
+        prototype: HTMLNewsSectionElement;
+        new (): HTMLNewsSectionElement;
+    };
+    interface HTMLSingleCardElement extends Components.SingleCard, HTMLStencilElement {
+    }
+    var HTMLSingleCardElement: {
+        prototype: HTMLSingleCardElement;
+        new (): HTMLSingleCardElement;
     };
     interface HTMLWhatYouNeedSectionElement extends Components.WhatYouNeedSection, HTMLStencilElement {
     }
@@ -129,9 +181,13 @@ declare global {
         "acme-sections": HTMLAcmeSectionsElement;
         "acme-subnav": HTMLAcmeSubnavElement;
         "acme-website": HTMLAcmeWebsiteElement;
+        "app-mobile-section": HTMLAppMobileSectionElement;
         "banner-section": HTMLBannerSectionElement;
         "business-section": HTMLBusinessSectionElement;
+        "cards-section": HTMLCardsSectionElement;
         "div-servizio": HTMLDivServizioElement;
+        "news-section": HTMLNewsSectionElement;
+        "single-card": HTMLSingleCardElement;
         "what-you-need-section": HTMLWhatYouNeedSectionElement;
     }
 }
@@ -156,9 +212,13 @@ declare namespace LocalJSX {
     }
     interface AcmeWebsite {
     }
+    interface AppMobileSection {
+    }
     interface BannerSection {
     }
     interface BusinessSection {
+    }
+    interface CardsSection {
     }
     interface DivServizio {
         /**
@@ -174,6 +234,30 @@ declare namespace LocalJSX {
          */
         "label"?: string;
     }
+    interface NewsSection {
+    }
+    interface SingleCard {
+        /**
+          * card description
+         */
+        "descrizione"?: string;
+        /**
+          * image file name
+         */
+        "fileName"?: string;
+        /**
+          * what is written inside the clickable tag a at the bottom of the card
+         */
+        "scrittaBottone"?: string;
+        /**
+          * card subtitle
+         */
+        "titoletto"?: string;
+        /**
+          * card title
+         */
+        "titolo"?: string;
+    }
     interface WhatYouNeedSection {
     }
     interface IntrinsicElements {
@@ -185,9 +269,13 @@ declare namespace LocalJSX {
         "acme-sections": AcmeSections;
         "acme-subnav": AcmeSubnav;
         "acme-website": AcmeWebsite;
+        "app-mobile-section": AppMobileSection;
         "banner-section": BannerSection;
         "business-section": BusinessSection;
+        "cards-section": CardsSection;
         "div-servizio": DivServizio;
+        "news-section": NewsSection;
+        "single-card": SingleCard;
         "what-you-need-section": WhatYouNeedSection;
     }
 }
@@ -203,9 +291,13 @@ declare module "@stencil/core" {
             "acme-sections": LocalJSX.AcmeSections & JSXBase.HTMLAttributes<HTMLAcmeSectionsElement>;
             "acme-subnav": LocalJSX.AcmeSubnav & JSXBase.HTMLAttributes<HTMLAcmeSubnavElement>;
             "acme-website": LocalJSX.AcmeWebsite & JSXBase.HTMLAttributes<HTMLAcmeWebsiteElement>;
+            "app-mobile-section": LocalJSX.AppMobileSection & JSXBase.HTMLAttributes<HTMLAppMobileSectionElement>;
             "banner-section": LocalJSX.BannerSection & JSXBase.HTMLAttributes<HTMLBannerSectionElement>;
             "business-section": LocalJSX.BusinessSection & JSXBase.HTMLAttributes<HTMLBusinessSectionElement>;
+            "cards-section": LocalJSX.CardsSection & JSXBase.HTMLAttributes<HTMLCardsSectionElement>;
             "div-servizio": LocalJSX.DivServizio & JSXBase.HTMLAttributes<HTMLDivServizioElement>;
+            "news-section": LocalJSX.NewsSection & JSXBase.HTMLAttributes<HTMLNewsSectionElement>;
+            "single-card": LocalJSX.SingleCard & JSXBase.HTMLAttributes<HTMLSingleCardElement>;
             "what-you-need-section": LocalJSX.WhatYouNeedSection & JSXBase.HTMLAttributes<HTMLWhatYouNeedSectionElement>;
         }
     }
