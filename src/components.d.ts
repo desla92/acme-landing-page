@@ -6,6 +6,8 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AboutUsSection {
+    }
     interface AcmeChatButton {
     }
     interface AcmeContactForm {
@@ -76,6 +78,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLAboutUsSectionElement extends Components.AboutUsSection, HTMLStencilElement {
+    }
+    var HTMLAboutUsSectionElement: {
+        prototype: HTMLAboutUsSectionElement;
+        new (): HTMLAboutUsSectionElement;
+    };
     interface HTMLAcmeChatButtonElement extends Components.AcmeChatButton, HTMLStencilElement {
     }
     var HTMLAcmeChatButtonElement: {
@@ -173,6 +181,7 @@ declare global {
         new (): HTMLWhatYouNeedSectionElement;
     };
     interface HTMLElementTagNameMap {
+        "about-us-section": HTMLAboutUsSectionElement;
         "acme-chat-button": HTMLAcmeChatButtonElement;
         "acme-contact-form": HTMLAcmeContactFormElement;
         "acme-footer": HTMLAcmeFooterElement;
@@ -192,6 +201,8 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface AboutUsSection {
+    }
     interface AcmeChatButton {
     }
     interface AcmeContactForm {
@@ -261,6 +272,7 @@ declare namespace LocalJSX {
     interface WhatYouNeedSection {
     }
     interface IntrinsicElements {
+        "about-us-section": AboutUsSection;
         "acme-chat-button": AcmeChatButton;
         "acme-contact-form": AcmeContactForm;
         "acme-footer": AcmeFooter;
@@ -283,6 +295,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "about-us-section": LocalJSX.AboutUsSection & JSXBase.HTMLAttributes<HTMLAboutUsSectionElement>;
             "acme-chat-button": LocalJSX.AcmeChatButton & JSXBase.HTMLAttributes<HTMLAcmeChatButtonElement>;
             "acme-contact-form": LocalJSX.AcmeContactForm & JSXBase.HTMLAttributes<HTMLAcmeContactFormElement>;
             "acme-footer": LocalJSX.AcmeFooter & JSXBase.HTMLAttributes<HTMLAcmeFooterElement>;

@@ -9,21 +9,13 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 10px;
-  padding: 50px 0px;
+  column-gap: 50px;
+  padding: 50px 0px 0px 0px ;
   position: relative;
 }
 img{
   width: 80%;
 }
-/* .cerchio{
-  position: absolute;
-  background-color: $primary-color;
-  width: 600px;
-  height: 300px;
-  z-index: -1;
-  border-radius: 50%;
-} */
 .dowload-app-mobile-left{
   display: flex;
   justify-content: flex-end;
@@ -36,64 +28,56 @@ img{
 .blue-up{
   background-color: $primary-color; 
   top: 130px;
-  right: 0;
-  width: 80%;
+  left: 0;
+  width: 20%;
 }
 .blue-down{
-  background-color: $primary-color; 
-  bottom: 150px;
-  left: 0;
-  width: 40%;
+  background-color: $secondary-color; 
+  top: 520px;
+  right: 0;
+  width: 100%;
 }
 .lblue-up{
   background-color: $secondary-color;
-  top: 250px;
-  right: 0;
-  width:80%;
+  top: 260px;
+  left: 0;
+  width:40%;
 }
 .lblue-down{
-  background-color: $secondary-color; 
-  bottom: 270px;
-  left: 0;
-  width: 40%;
+  background-color: $primary-color; 
+  top: 390px;
+  right: 0;
+  width: 100%;
 }
 h2{
   font-size: 2rem;
   color: $primary-color;
-  position: absolute;
-  top: 50px;
-  right: 10vw;
- /*  left: 50%;
-  transform: translate(-50%, -50%); */
 }
-.slide-in {
-  animation-duration: 2s;
-  animation-name: slidein;
-  animation-iteration-count: initial;
-  animation-delay: 5s;
+ion-icon{
+  font-size: 2rem;
 }
-
-@keyframes slidein {
-  from {
-    width: 0; 
-  }
-
-  to {
-    width: 80%;
-  }
+button{
+  background-color: #000;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: .25rem;
+  display: flex;
+  flex-direction: row;
+  font-size: xx-small;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 140px;
 }
-.slide-in40 {
-  animation-duration: 2s;
-  animation-name: slidein40;
-  animation-iteration-count: initial;
+.button-container{
+  display: flex;
+  justify-content: flex-start;
 }
-
-@keyframes slidein40 {
-  from {
-    width: 0; 
-  }
-
-  to {
-    width: 40%;
-  }
+.store{
+  font-size: 1rem;
+  margin: 0;;
+}
+button:nth-child(2){
+  margin-left: 20px;
 }

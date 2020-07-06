@@ -16,14 +16,26 @@ export class AcmeChatButton implements ComponentInterface {
     const chatBox = this.el.shadowRoot.querySelector('.chatbox') as HTMLElement;
     const closeButton = this.el.shadowRoot.querySelector('.close') as HTMLElement;
     const message = this.el.shadowRoot.querySelector('.message') as HTMLElement;
+    const sendButton = this.el.shadowRoot.querySelector('.send') as HTMLElement;
+    const body = this.el.shadowRoot.querySelector('.body') as HTMLElement;
     chatButton.addEventListener('click', ()=>{
-    chatBox.style.display= "grid";
-    chatButton.style.display= "none";
-    setInterval(() => this.showMessage(message), 1000);
+      chatBox.style.display= "grid";
+      chatButton.style.display= "none";
+      setInterval(() => this.showMessage(message), 1000);
     })
     closeButton.addEventListener('click', ()=>{
       chatBox.style.display= "none";
       chatButton.style.display= "block";
+      })
+      sendButton.addEventListener('click', (evt:any)=>{
+        console.log(evt)
+        const p = document.createElement('p');
+        p.innerText = evt.path[5].children[0].value;
+        p.classList.add('sent-message');
+        if(evt.path[5].children[0].value !== "" && evt.path[5].children[0].value !== undefined){
+          body.appendChild(p);
+          evt.path[5].children[0].value = "";
+        };
       })
   }
 
@@ -43,7 +55,7 @@ export class AcmeChatButton implements ComponentInterface {
         </div>
         <div class="footer">
           <textarea placeholder="Scrivi il tuo messaggio" name="msg" required></textarea>
-          <ion-icon name="send"></ion-icon></div>
+          <ion-icon class="send" name="send"></ion-icon></div>
         </div>
       </Host>
     );

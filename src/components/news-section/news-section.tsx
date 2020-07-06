@@ -13,7 +13,7 @@ export class NewsSection implements ComponentInterface {
   private getNews(){
     fetch(`https://jsonplaceholder.typicode.com/posts`)
       .then(response => (response.json()))
-      .then(json=> {this.posts = json.filter((element, i)=> i<6)}
+      .then(json=> {this.posts = json.filter((_element, i)=> i<6)}
       )
   }
   componentWillRender(){

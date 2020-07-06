@@ -29,7 +29,7 @@ export class AcmeContactForm implements ComponentInterface {
     })
   }
 
-  private validateFname = (evt)=>{
+  private validateFname = ()=>{
     if(this.fname.value === ""){
       this.fname.style="border: solid 2px red;";
       (this.greenChecks)[0].style.display="none";
@@ -42,7 +42,7 @@ export class AcmeContactForm implements ComponentInterface {
       return true;
     }
   }
-  private validateLname = (evt)=>{
+  private validateLname = ()=>{
     if(this.lname.value === ""){
       this.lname.style="border: solid 2px red;";
       (this.greenChecks)[1].style.display="none";
@@ -55,7 +55,7 @@ export class AcmeContactForm implements ComponentInterface {
       return true;
     }
   }
-  private validateEmail=(evt)=>{  
+  private validateEmail=()=>{  
     const atposition=this.email.value.indexOf("@");  
     const dotposition=this.email.value.lastIndexOf("."); 
     if (atposition<1 || dotposition<atposition+2 || dotposition+2>=this.email.value.length){ 
@@ -71,7 +71,7 @@ export class AcmeContactForm implements ComponentInterface {
     return true;
   }
 } 
-private checkTextArea = (evt)=>{
+private checkTextArea = ()=>{
   if(this.textarea.value === ""){
     this.textarea.style="border: solid 2px red;";
     (this.greenChecks)[3].style.display="none";
@@ -85,7 +85,7 @@ private checkTextArea = (evt)=>{
   }
 }
 private submitForm=(evt)=>{
-  if(!this.validateFname(evt) && !this.validateLname(evt) && !this.validateEmail(evt) && !this.checkTextArea(evt)){
+  if(!this.validateFname() && !this.validateLname() && !this.validateEmail() && !this.checkTextArea()){
     evt.preventDefault();
   }
 }

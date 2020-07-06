@@ -1,0 +1,71 @@
+:host {
+  display: block;
+}
+.container{
+  width: 96%;
+  margin: 100px auto;
+}
+.chiSiamo{
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  padding-top: 50px;
+}
+.margin-right{
+  margin-right: 30px;
+}
+.nextToEach{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.azzurro{
+  color: $secondary-color;
+}
+.tac{
+  text-align: center;
+}
+a{
+  text-decoration: none;
+  background-color: #12A6E6;
+  border-radius: 0.25rem;
+  color: #ffffff;
+  padding: 10px 15px;
+  transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+a ion-icon{
+  margin-left: 15px;;
+}
+a:hover{
+  opacity: 0.8;
+  color: #02336E;
+  text-decoration: none;
+  border-bottom: 0;
+}
+.button-wrapper{
+  display: flex;
+  justify-content: center;
+}
+a:nth-child(2){
+  margin-left: 20px;
+}
+h2{
+  font-size: 2rem;
+  color: $primary-color;
+}
+p{
+  line-height: 2rem;
+}
+.smallFr{
+  padding-top: 30px;
+  display: flex;
+}
+.smallFr ion-icon{
+  font-size: 2.5rem;
+  color: $primary-color;
+  margin-right: 15px;
+}
